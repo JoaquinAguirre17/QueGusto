@@ -1,0 +1,119 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   LOGO
+========================= */
+.navbar-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: #ffb347;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo h2:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   LINKS
+========================= */
+.navbar-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* LINKS BASE */
+.navbar-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #f1f1f1;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFECTO GLASS */
+.navbar-links a:hover {
+  background: rgba(255, 179, 71, 0.15);
+  color: #ffb347;
+
+  transform: translateY(-2px);
+}
+
+/* SUBRAYADO ANIMADO */
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #ffb347;
+
+  transition: 0.3s ease;
+
+  transform: translateX(-50%);
+}
+
+.navbar-links a:hover::after {
+  width: 70%;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
