@@ -39,7 +39,7 @@
 
   margin-bottom: 15px;
 
-  color: #ffb347;
+  color: red;
   text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -58,7 +58,7 @@
 
   cursor: pointer;
 
-  background: linear-gradient(135deg, #ffb347, #ff7b00);
+  background: linear-gradient(135deg, #fa0101, #b60404);
   color: #111;
 
   font-weight: bold;
@@ -120,9 +120,9 @@
 
   background: rgba(255, 179, 71, 0.12);
 
-  border-color: #ffb347;
+  border-color: red;
 
-  color: #ffb347;
+  color: red;
 }
 
 /* =========================

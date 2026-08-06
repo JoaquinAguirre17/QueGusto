@@ -1,119 +1,165 @@
 /* =========================
    NAVBAR BASE
 ========================= */
-.navbar {
+.qg-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #8b0000; /* rojo oscuro */
+  color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 15px 30px;
-
-  background: rgba(20, 20, 20, 0.75);
-  backdrop-filter: blur(12px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================
    LOGO
 ========================= */
-.navbar-logo h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-
-  color: #ffb347;
-
-  letter-spacing: 1px;
-
+.qg-navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
-
-  transition: transform 0.2s ease;
 }
 
-.navbar-logo h2:hover {
-  transform: scale(1.05);
+.qg-navbar__logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.qg-navbar__logo span {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* =========================
-   LINKS
+   DESKTOP LINKS
 ========================= */
-.navbar-links {
+.qg-navbar__links {
   display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* LINKS BASE */
-.navbar-links a {
-  position: relative;
-
-  text-decoration: none;
-
-  color: #f1f1f1;
-
-  font-size: 0.95rem;
-  font-weight: 500;
-
-  padding: 8px 12px;
-
-  border-radius: 10px;
-
-  transition: all 0.3s ease;
+.qg-navbar__links button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.2s;
 }
 
-/* HOVER EFECTO GLASS */
-.navbar-links a:hover {
-  background: rgba(255, 179, 71, 0.15);
-  color: #ffb347;
-
-  transform: translateY(-2px);
+.qg-navbar__links button:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* SUBRAYADO ANIMADO */
-.navbar-links a::after {
-  content: "";
-
-  position: absolute;
-  left: 50%;
-  bottom: 4px;
-
-  width: 0%;
-  height: 2px;
-
-  background: #ffb347;
-
-  transition: 0.3s ease;
-
-  transform: translateX(-50%);
+/* =========================
+   HAMBURGUESA
+========================= */
+.qg-navbar__toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-.navbar-links a:hover::after {
-  width: 70%;
+/* =========================
+   MOBILE MENU
+========================= */
+.qg-navbar__mobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #5c0000;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 20px;
+  gap: 15px;
+  transition: 0.3s;
+  z-index: 1100;
+}
+
+.qg-navbar__mobile.active {
+  right: 0;
+}
+
+.qg-navbar__mobile button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.qg-navbar__mobile button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.qg-navbar__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
+  .qg-navbar__links {
+    display: none;
   }
 
-  .navbar-links {
-    justify-content: center;
-    gap: 10px;
+  .qg-navbar__toggle {
+    display: block;
   }
+}
+.qg-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  .navbar-links a {
-    font-size: 0.85rem;
-    padding: 6px 10px;
-  }
+/* carrito */
+.qg-navbar__cart {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* badge */
+.qg-navbar__cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ffcc00;
+  color: black;
+  font-size: 11px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
